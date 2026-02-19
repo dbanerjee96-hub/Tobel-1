@@ -251,6 +251,7 @@ nav {
 }
 
 .secondary-btn:hover {
+    /* border: 1px solid var(--primary-color); */
     /* text-shadow: 1px 1px 10px var(--secondary-color); */
     box-shadow: 1px 1px 7px var(--secondary-color);
 }
@@ -544,9 +545,13 @@ footer {
 }
 
 .email {
-    /* background: transparent; */
-    /* border-bottom: 1px solid var(--primary-color); */
+    background: transparent !important;
     margin-bottom: 10px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--primary-color);
+    font-family: "Roboto", sans-serif;
+    font-size: 19px;
 }
 
 .note {
