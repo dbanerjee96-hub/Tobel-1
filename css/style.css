@@ -602,16 +602,86 @@ footer .secondary-btn:hover {
 }
 
 @media screen and (max-width:992px) {
-    .offcanvas {
-        flex-direction: column;
-        background: rgba(0, 0, 0, 0.5);
-        text-align: center;
-        backdrop-filter: blur(20px);
-        padding-top: 76.5px;
+    /* Header Section */
+
+    .menu {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        padding: 5px 20px;
+        color: white;
+        position: relative;
+        z-index: 999;
     }
 
+    .menu::after,
+    .menu::before {
+        content: "";
+        height: 2px;
+        background: white;
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        transition: 0.5s linear;
+    }
+
+    .menu::after {
+        top: -5px;
+    }
+
+    .menu::before {
+        bottom: -5px;
+    }
+
+    .menu span {
+        height: 2px;
+        background: white;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: 0.5s linear;
+    }
+
+    .menu.show span {
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+
+    .menu.show::after {
+        transform: rotate(45deg) translateX(13px);
+    }
+
+    .menu.show::before {
+        transform: rotate(-45deg) translateX(13px);
+    }
+
+    .navbar-collapse {
+        display: block;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: -100%;
+        width: 60%;
+        background: black;
+        /* padding-top: 100px; */
+        transition: 0.5s linear;
+        z-index: 99;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+
     .nav-item {
-        margin: 0 0 20px 0 !important;
+        margin: 0 0 20px 0;
+    }
+
+    .nav-link {
+        text-align: center;
     }
 
     .close-btn {
